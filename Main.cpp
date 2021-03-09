@@ -14,3 +14,4 @@ int main(){
         playerPos = UpdatePos(playerPos, 9, map);
     }
 }
+//test
