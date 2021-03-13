@@ -12,23 +12,38 @@
 std::string map;
 int playerPos;
 int mapHorLength;
+std::string nextMap = "data/1.json";
+bool levelEnded;
+int levelEnd;
 
 int main(){
-    loadMap("data/1.json");
-
-    map = jsonGetStringData("map");
-    playerPos = jsonGetIntData("playerStartPos");
-    mapHorLength = jsonGetIntData("mapHorLength");
-
-    while ( map.find ("n") != std::string::npos ) {
-        map.replace(map.find("n"), 1, "\n");
-    }
-
+    levelEnded = true;
     while(true) {
+        if(levelEnded == false && playerPos == levelEnd) {
+            setOnTopChar(".");
+            nextMap = jsonGetStringData("nextMap");
+            levelEnded = true;
+            unloadMap();
+        }
+        if(levelEnded) {
+            loadMap(nextMap);
+
+            map = jsonGetStringData("map");
+            playerPos = jsonGetIntData("playerStartPos");
+            mapHorLength = jsonGetIntData("mapHorLength");
+            levelEnd = jsonGetIntData("levelEnd");
+
+            while ( map.find ("n") != std::string::npos ) {
+                map.replace(map.find("n"), 1, "\n");
+            }
+            levelEnded = false;
+        }
+
         system("cls");
         map = map.replace(playerPos, 1, "@");
         std::cout << map;
-        map = map.replace((playerPos), 1, ".");
+        std::cout << "Player Position: " << playerPos;
+        map = map.replace((playerPos), 1, getOnTopChar());
         playerPos = UpdatePos(playerPos, mapHorLength, map);
     }
 }

@@ -11,6 +11,10 @@ json j;
 void loadMap(std::string name) {
     i.open(name);
     j = json::parse(i);
+    i.close();
+}
+void unloadMap() {
+    j.clear();
 }
 
 std::string jsonGetStringData(std::string data) {

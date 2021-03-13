@@ -13,6 +13,7 @@
 using json = nlohmann::json;
 
 void loadMap(std::string name);
+void unloadMap();
 
 std::string jsonGetStringData(std::string data);
 int jsonGetIntData(std::string data);
