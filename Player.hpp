@@ -1,4 +1,4 @@
-/* Player.h ¬ GamerTime ¬ 7Games
+/* Player.hpp ¬ GamerTime ¬ 7Games
 	Created: 09/03/20
 	Last Edited: 09/03/20
 */
