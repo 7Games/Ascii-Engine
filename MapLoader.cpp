@@ -1,6 +1,6 @@
 /* MapLoader.cpp ¬ GamerTime ¬ 7Games
 	Created: 13/03/20
-	Last Edited: 13/03/20
+	Last Edited: 17/03/20
 */
 #include "MapLoader.hpp"
 
@@ -22,6 +22,6 @@ std::string jsonGetStringData(std::string data) {
 }
 
 int jsonGetIntData(std::string data) {
-    std::string fuck = j.at(data);
-    return std::stoi(fuck);
+    int i = j.at(data);
+    return i;
 }
