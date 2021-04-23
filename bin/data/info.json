@@ -1,0 +1,6 @@
+{
+  "programTitle": "ASCII Engine",
+  "firstMap": "./data/map/1.json",
+  "playerStartPos": 168,
+  "gameTitle": "ASCII Engine``````Press 1 to Start`Press 2 to Exit"
+}

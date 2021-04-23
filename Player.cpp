@@ -1,15 +1,13 @@
-/* Player.cpp ¬ GamerTime ¬ 7Games
+/* Player.cpp ¬ ASCIIEngine ¬ 7Games
 	Created: 09/03/20
-	Last Edited: 13/03/20
+	Last Edited: 31/03/20
 */
-#include "Input.hpp"
 #include "Player.hpp"
 
 std::string walkToChar = ".";
 
-int UpdatePos(int playerPos, int mapHorLength, std::string map) {
-    char moveKey = getKeyPress();
-    
+int ASCIIEngine::Player::UpdatePos(int playerPos, int mapHorLength, std::string map) {
+    char moveKey = in.getKeyPress();
     switch (moveKey) {
         case 'w':
             if(map.at(playerPos-mapHorLength) != '#'){
@@ -43,10 +41,10 @@ int UpdatePos(int playerPos, int mapHorLength, std::string map) {
     return playerPos;
 }
 
-std::string getOnTopChar() {
+std::string ASCIIEngine::Player::getOnTopChar() {
     return walkToChar;
 }
 
-void setOnTopChar(std::string c) {
+void ASCIIEngine::Player::setOnTopChar(std::string c) {
     walkToChar = c;
 }
