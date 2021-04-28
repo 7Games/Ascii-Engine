@@ -1,6 +1,6 @@
 /* Input.hpp ¬ ASCIIEngine ¬ 7Games
-	Created: 09/03/21
-	Last Edited: 24/04/21
+	Created: 09/03/20
+	Last Edited: 31/03/20
 */
 #ifndef INPUT_H
 #define INPUT_H

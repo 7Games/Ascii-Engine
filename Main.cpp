@@ -1,6 +1,6 @@
 /* Main.cpp ¬ ASCIIEngine ¬ 7Games
-	Created: 09/03/21
-	Last Edited: 24/04/21
+	Created: 09/03/20
+	Last Edited: 23/04/20
 */
 #include <iostream>
 #include <fstream>
@@ -74,7 +74,6 @@ void updatePlayer(){
 }
 
 int main(){
-	//Checks if the data folder is there
 	std::ifstream exists("./data/info.json");
     if(exists.good()){
 		levelEnded = true;
@@ -90,9 +89,7 @@ int main(){
 		jl.unloadJSON();
 		//Sets the title
 		SetConsoleTitleA(c);
-
 		while(running) {
-			//Checks if the game is in the title or game state
 			switch(state){
 				case title:
 					std::cout<< gameTitle<<"\n\n\n"<<versionNumber<<"\n";
