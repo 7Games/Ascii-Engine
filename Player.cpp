@@ -7,6 +7,7 @@
 std::string walkToChar = ".";
 
 int ASCIIEngine::Player::UpdatePos(int playerPos, int mapHorLength, std::string map) {
+    actionPressed = false;
     char moveKey = in.getKeyPress();
     switch (moveKey) {
         case 'w':
@@ -33,7 +34,9 @@ int ASCIIEngine::Player::UpdatePos(int playerPos, int mapHorLength, std::string 
                 playerPos = playerPos + 1;
             }
             break;
-        
+        case 'e':
+            actionPressed = true;
+            break;
         default:
             break;
     }

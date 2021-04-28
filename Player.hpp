@@ -6,12 +6,14 @@
 #define PLAYER_H
 
 #include <iostream>
+#include <vector>
 #include <string.h>
 #include "Input.hpp"
 
 namespace ASCIIEngine {
 	class Player{
 	public:
+		bool actionPressed = false;
 		int UpdatePos(int playerPos, int mapHorLength, std::string map);
 		std::string getOnTopChar();
 		void setOnTopChar(std::string c);
