@@ -38,7 +38,6 @@ GameState state = title;
 std::vector<std::string> nextMap;
 std::vector<std::string> nextTrigger;
 std::vector<std::string> textTrigger;
-std::vector<std::string> triggerType;
 std::vector<std::string> triggerChangeTo;
 std::vector<int> triggerChangeAt;
 std::vector<int> triggerTalkPosition;
@@ -68,7 +67,6 @@ void loadNextLevel() {
 
 		triggerTalkPosition   = jl.jsonGetArrayInt("triggerTalkPos");
 		triggerChangePosition = jl.jsonGetArrayInt("triggerChangePos");
-		triggerType           = jl.jsonGetArrayString("triggerType");
 		textTrigger           = jl.jsonGetArrayString("triggerTalk");
 		triggerChangeAt       = jl.jsonGetArrayInt("triggerChangeAt");
 		triggerChangeTo       = jl.jsonGetArrayString("triggerChangeTo"); 
@@ -146,16 +144,14 @@ int main(){
 							jl.unloadJSON();
 							map = "";
 						}
-						if(triggerType[i] == "talk" && talking == false) {
+						if(talking == false) {
 							if(playerPos == triggerTalkPosition[i] && p.actionPressed == true){
 								talkText.append(textTrigger[i]);
 								talking = true;
 							}
 						}
-						if(triggerType[i] == "change") {
-							if(playerPos == triggerChangePosition[i] && p.actionPressed == true){
-								map = map.replace(triggerChangeAt[i], 1, triggerChangeTo[i]);
-							}
+						if(playerPos == triggerChangePosition[i] && p.actionPressed == true){
+							map = map.replace(triggerChangeAt[i], 1, triggerChangeTo[i]);
 						}
 					}
 					

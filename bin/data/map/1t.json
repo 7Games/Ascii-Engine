@@ -1,5 +1,4 @@
 {
-    "triggerType": [ "talk", "change", "change", "talk" ],
     "triggerTalkPos": [ 39, 36 ],
     "triggerChangePos": [ 94, 99 ],
     "triggerTalk": [ "this is a certified hood classic", "fuk woek" ],
