@@ -1,12 +1,13 @@
 /* Player.cpp ¬ ASCIIEngine ¬ 7Games
-	Created: 09/03/20
-	Last Edited: 31/03/20
+	Created: 09/03/21
+	Last Edited: 24/04/21
 */
 #include "Player.hpp"
 
 std::string walkToChar = ".";
 
 int ASCIIEngine::Player::UpdatePos(int playerPos, int mapHorLength, std::string map) {
+    actionPressed = false;
     char moveKey = in.getKeyPress();
     switch (moveKey) {
         case 'w':
@@ -33,7 +34,9 @@ int ASCIIEngine::Player::UpdatePos(int playerPos, int mapHorLength, std::string 
                 playerPos = playerPos + 1;
             }
             break;
-        
+        case 'e':
+            actionPressed = true;
+            break;
         default:
             break;
     }

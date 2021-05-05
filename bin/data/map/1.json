@@ -3,5 +3,6 @@
   "mapHorLength": 26,
   "levelEnd":			[ 246, 27 ],
   "nextMap": 			[ "data/map/2.json", "data/map/3.json" ],
-  "playerStartNextMap": [ 246, 53 ]
+  "playerStartNextMap": [ 246, 53 ],
+  "nextTrigger": [ "2t.json", "3t.json" ]
 }

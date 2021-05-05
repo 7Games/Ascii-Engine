@@ -1,6 +1,6 @@
 /* JSONLoader.cpp ¬ ASCIIEngine ¬ 7Games
-	Created: 13/03/20
-	Last Edited: 31/03/20
+	Created: 13/03/21
+	Last Edited: 24/04/21
 */
 #include "JSONLoader.hpp"
 
